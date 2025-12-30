@@ -1,0 +1,212 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+
+/* Custom global styles */
+@layer components {
+  /* home page */
+  /* hero section */
+  /* nav bar */
+  .header_nav {
+    @apply absolute top-0 left-0 w-full z-50;
+  }
+  .navbar_main_div {
+    @apply lg:px-22 px-5 mx-auto py-4 flex items-center justify-between border-b border-white/8;
+  }
+  .dropdown_options {
+    @apply hover:bg-gray-100 transition;
+  }
+  .container_inner {
+    @apply m-2.75 h-full rounded-[20px];
+  }
+  .container_main_div {
+    @apply max-w-335 mx-auto;
+  }
+  .arrow_btn {
+    @apply flex items-center gap-2 bg-[#FFCB05] border border-white/30 text-[#1E552A] px-2 py-1.5 rounded-full text-sm font-medium;
+  }
+  .arrow_btn_icon_bg {
+    @apply bg-white rounded-full p-2;
+  }
+  
+  /* about us section */
+  .about_us {
+    @apply bg-[#F8F8F8] px-4 2xl:px-0 md:py-24 py-6;
+  }
+  .about_us_main_div {
+    @apply max-w-335 mx-auto grid lg:grid-cols-2 2xl:gap-16 gap-6 items-center;
+  }
+  .about_us_badge {
+    @apply inline-block border border-[#1E552A] text-[#1E552A] px-4 py-2 rounded-full mb-4 font-semibold uppercase;
+  }
+  .about_us_content {
+    @apply max-w-111.25;
+  }
+  .about_us_heading {
+    @apply text-4xl xl:text-5xl font-bold text-[#1E552A] leading-tight;
+  }
+  .see_all_btn {
+    @apply flex items-center gap-2 bg-[#FFCB05] border border-white/30 text-[#1E552A] px-2 py-1.5 rounded-full text-sm font-medium max-w-28.75;
+  }
+  .see_all_btn_icon_bg {
+    @apply bg-white rounded-full p-2;
+  }
+  .status_count {
+    @apply md:text-5xl text-4xl font-light text-[#1E552A] border-b border-[#DEE2E6] pb-2;
+  }
+  .about_us_description {
+    @apply text-[#1E552A] md:mt-11 max-w-xl md:pb-16.25 pb-4;
+  }
+  .experience {
+    @apply text-[15px] text-[#1E552A] mb-6 mt-4;
+  }
+  .social_icons {
+    @apply flex gap-6 text-green-900 md:mt-65.75 mt-4;
+  }
+  
+  /* service section */
+  .service_btn {
+    @apply flex items-center gap-2 bg-[#FFCB05] border border-white/30 text-[#1E552A] pl-2 pr-5 py-1.5 rounded-full text-sm font-medium cursor-pointer;
+  };
+  .service_section_title {
+    @apply text-[#1E552A] md:text-5xl text-3xl font-bold;
+  };
+  .service_circle {
+    @apply w-60 h-60 rounded-full bg-gradient-to-b from-[#1FA63C] to-[#1E552A] flex flex-col items-center justify-center text-white p-[46px];
+  };
+  .service_circle_title {
+    @apply mt-4 text-lg font-bold text-center;
+  };
+  .service_section_header {
+    @apply flex md:flex-row flex-col md:justify-between md:items-center;
+  };
+
+  /* stats section */
+  .stats_title {
+    @apply text-5xl font-bold text-[#FFCB05] pb-2;
+  }
+  .stats_subtitle {
+    @apply text-sm text-[#E5E7EB];
+  }
+
+  /* why section */
+  .why_card_title {
+    @apply text-xl font-semibold pb-3;
+  }
+  .why_card {
+    @apply px-11 py-7 rounded-lg flex gap-6;
+  }
+  .why_card_icon_bg {
+    @apply p-4 rounded-full bg-[#2ECC71]/10 min-w-16 h-16 flex items-center justify-center;
+  }
+  /* news section */
+  .news_card_header {
+    @apply inline-block border border-[#1E552A] text-[#1E552A] px-4 py-0.5 rounded-full mb-4.5 uppercase text-sm font-normal;
+  }
+  .news_card_title {
+    @apply text-lg text-[#1E552A] font-semibold mb-6 max-w-[320px];
+  }
+  .news_card_date {
+    @apply text-sm text-[#6B7280];
+  }
+  .news_card_img {
+    @apply rounded-2xl mb-7 h-78.75;
+  }
+  /* footer */
+  .cta_section {
+    @apply relative h-87.5 flex items-center justify-center text-center text-white;
+  }
+  .bg_layer {
+    @apply absolute inset-0 bg-[#1E552A4D]/70;
+  }
+  .cta_contents {
+    @apply relative z-10 max-w-3xl px-4;
+  }
+  .cta_heading {
+    @apply text-3xl md:text-5xl font-bold;
+  }
+  .cta_heading2 {
+    @apply text-2xl md:text-4xl font-light mt-2;
+  }
+  .cta_btn_div {
+    @apply flex justify-center md:mt-9 mt-6;
+  }
+  .newsletter_bar {
+    @apply bg-[#1E552A] md:py-22.5 py-6;
+  }
+  .newsletter_contents {
+    @apply max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center md:gap-13 gap-0 justify-center text-white;
+  }
+  .newslegger_text {
+    @apply text-2xl font-bold;
+  }
+  .newsletter_input_div {
+    @apply flex items-center bg-white/20 rounded-full overflow-hidden w-full md:w-[420px] mt-4 md:mt-0;
+  }
+  .newsletter_input {
+    @apply flex-1 bg-transparent px-5 py-3 text-white placeholder-white focus:outline-none;
+  }
+  .newsletter_btn {
+    @apply bg-white text-green-700 w-12 h-12 flex items-center justify-center rounded-full m-1 cursor-pointer;
+  }
+  .footer_contact_items {
+    @apply flex items-center gap-2 mb-3;
+  }
+  .footer_social_icons {
+    @apply rounded-full border border-white/10 h-10 w-10 flex justify-center items-center cursor-pointer hover:bg-white/10 transition;
+  }
+  .footer_bottom_arrow {
+    @apply flex gap-2 text-[15px] mt-2 items-center justify-center;
+  }
+
+  /* about us page styles */
+  .common_hero_section {
+    @apply bg-[url('/assets/common_hero_bg.png')] h-108.5 bg-no-repeat lg:mx-17.5 mx-4 md:mb-29 mb-6 rounded-[20px];
+  }
+  .common_hero_heading {
+    @apply text-white text-[85px] font-semibold flex justify-center items-center pt-35.25;
+  }
+  .common_page_container {
+    @apply max-w-330 mx-auto;
+  }
+  .about_us_chairman_section {
+    @apply flex lg:flex-row flex-col md:gap-13.5 gap-5 md:mb-37.5 mb-6 px-4 xl:px-0;
+  }
+  .key_points_list_item {
+    @apply text-[#1E552A] ml-5;
+  }
+  .key_points_title {
+    @apply font-semibold mb-4 text-lg text-[#1E552A];
+  }
+  .zone_text {
+    @apply text-[15px] text-[#1E552A] pb-8;
+  }
+  .overview_card {
+    @apply bg-white sm:px-13.25 px-6 sm:py-8.75 py-5 rounded-2xl;
+  }
+  .overview_card_icon_bg {
+    @apply bg-[#2ECC71]/10 sm:mb-12 mb-5 h-14 w-14 rounded-full;
+  }
+  .overview_card_title {
+    @apply text-xl text-[#1E552A] font-semibold pb-5;
+  }
+  .about_us_stats_contents {
+    @apply relative z-10 flex md:gap-10 px-8 lg:py-28.5 py-6 text-white max-w-335 mx-auto justify-center;
+  }
+  .about_us_stats_grid {
+    @apply flex md:flex-row flex-col xl:gap-40.5 justify-between lg:gap-13 gap-6 text-center;
+  }
+  .about_us_stats_number {
+    @apply lg:text-[56px] text-3xl font-black text-[#FFCB05] md:pb-7 pb-4;
+  }
+  .about_us_stats_number_text {
+    @apply lg:text-lg text-white font-semibold uppercase;
+  }
+  .overview_cards_section_div {
+    @apply md:mb-20 mb-6 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-8 gap-6 px-4 2xl:px-0;
+  }
+  .overview_section_div {
+    @apply flex md:mb-23.75 mb-6 lg:gap-21.5 gap-6 lg:flex-row flex-col items-center px-4 2xl:px-0;
+  }
+
+}
