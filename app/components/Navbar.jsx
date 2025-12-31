@@ -57,7 +57,7 @@ export default function Navbar() {
                 className="dropdown-content menu mt-2 w-36 rounded-box bg-white text-black shadow"
               >
                 <li>
-                  <a className="dropdown_options">Option 1</a>
+                  <a className="hover:bg-gray-100 transition">Option 1</a>
                 </li>
                 <li>
                   <a className="hover:bg-gray-100 transition">Option 2</a>

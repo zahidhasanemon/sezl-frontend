@@ -55,7 +55,7 @@
     @apply md:text-5xl text-4xl font-light text-[#1E552A] border-b border-[#DEE2E6] pb-2;
   }
   .about_us_description {
-    @apply text-[#1E552A] md:mt-11 max-w-xl md:pb-16.25 pb-4;
+    @apply text-[#1E552A] md:mt-11 max-w-xl;
   }
   .experience {
     @apply text-[15px] text-[#1E552A] mb-6 mt-4;
@@ -114,7 +114,7 @@
   }
   /* footer */
   .cta_section {
-    @apply relative h-87.5 flex items-center justify-center text-center text-white;
+    @apply  h-87.5 flex items-center justify-center text-center text-white;
   }
   .bg_layer {
     @apply absolute inset-0 bg-[#1E552A4D]/70;
@@ -161,13 +161,28 @@
 
   /* about us page styles */
   .common_hero_section {
-    @apply bg-[url('/assets/common_hero_bg.png')] h-108.5 bg-no-repeat lg:mx-17.5 mx-4 md:mb-29 mb-6 rounded-[20px];
+    @apply bg-[url('/assets/common_hero_bg.png')] md:h-108.5 bg-no-repeat lg:mx-17.5 mx-4 md:mb-29 mb-6 rounded-[20px];
   }
   .common_hero_heading {
-    @apply text-white text-[85px] font-semibold flex justify-center items-center pt-35.25;
+    @apply text-white lg:text-[85px] md:text-5xl text-3xl px-10 font-semibold flex justify-center items-center md:pt-35.25 pt-10 pb-10;
   }
   .common_page_container {
     @apply max-w-330 mx-auto;
+  }
+  .chairman_image {
+    @apply sm:min-w-111.5 sm:h-134.75 rounded-lg mb-5;
+  }
+  .chairman_name {
+    @apply text-[#1E552A] text-[32px] font-bold;
+  }
+  .chairman_position {
+    @apply text-[22px] font-bold text-[#2D2D2D];
+  }
+  .chairman_company_name {
+    @apply text-[#2D2D2D] font-medium text-[22px];
+  }
+  .chairman_message_text {
+    @apply text-[#2D2D2D] font-medium;
   }
   .about_us_chairman_section {
     @apply flex lg:flex-row flex-col md:gap-13.5 gap-5 md:mb-37.5 mb-6 px-4 xl:px-0;
@@ -208,5 +223,89 @@
   .overview_section_div {
     @apply flex md:mb-23.75 mb-6 lg:gap-21.5 gap-6 lg:flex-row flex-col items-center px-4 2xl:px-0;
   }
+  /* history section */
+  .history_section {
+    @apply max-w-436.5 mx-auto px-4 md:py-16 py-5;
+  }
+  .history_inner_div {
+    @apply rounded-3xl overflow-hidden bg-[#1f5a2a] text-white;
+  }
+  .history_top_img {
+    @apply relative h-70 lg:h-90;
+  }
+  .history_contacts {
+    @apply px-5 lg:px-10 md:py-10 py-6 max-w-330 mx-auto;
+  }
+  .history_contact_title {
+    @apply lg:text-[32px] text-xl font-medium lg:mb-13 mb-5;
+  }
+  .history_card_grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-5 gap-4;
+  }
+  .history_card_div {
+    @apply bg-[#1b4d25] rounded-2xl py-10 px-7.5;
+  }
+  .history_card_title {
+    @apply font-bold mb-3 text-lg;
+  }
+  .history_card_text {
+    @apply text-white text-[15px] leading-relaxed;
+  }
+  .history_timeline {
+    @apply relative flex items-center justify-between mb-5 max-w-275 mx-auto;
+  }
+  .history_timeline_year {
+    @apply relative z-10 flex flex-col items-center gap-3;
+  }
+  .history_timeline_year_single {
+    @apply px-4 py-1 text-sm rounded-full border border-[#FFFFFF]/15 text-[#FFCB05] font-bold mb-5;
+  }
+  .history_timeline_dot {
+    @apply w-2.5 h-2.5 rounded-full bg-white;
+  }
+  
+  /* about meet page */
+  .partner_card_img {
+    @apply rounded-full h-16.25 w-16.25 md:mb-10 mb-4;
+  }
+  .partner_card_subtitle {
+    @apply text-sm text-[#1E572B] font-medium pb-4;
+  }
+
+  /* directors page */
+  .director_card_grid {
+    @apply grid xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 md:pb-25 pb-7 px-4;
+  }
+  .director_card_div {
+    @apply bg-white sm:p-6 p-3 rounded-2xl;
+  }
+  .director_card_content {
+    @apply pt-4.5 flex justify-between;
+  }
+  .director_card_title {
+    @apply text-[#1E552A] lg:text-lg font-semibold;
+  }
+  .director_card_subtitle {
+    @apply text-[#1E552A] text-sm font-medium;
+  }
+  .director_card_img {
+    @apply rounded-lg lg:max-h-64.5 sm:max-h-50 lg:max-w-64.5 min-w-full object-cover;
+  }
+  .director_card_link_img {
+    @apply cursor-pointer object-cover;
+  }
+  .strategic_title {
+    @apply font-bold lg:text-5xl text-3xl mb-6;
+  }
+  .leadership_section {
+    @apply bg-white mx-4 rounded-[20px] lg:pt-19 pt-6 lg:pb-25 pb-6 lg:mb-25 mb-6;
+  }
+  .leadership_contents {
+    @apply max-w-330 mx-auto flex xl:gap-19 gap-7 justify-center items-center lg:flex-row flex-col px-4;
+  }
+  .leadership_title {
+    @apply text-xl font-semibold text-[#1E552A] pb-3;
+  }
+  
 
 }

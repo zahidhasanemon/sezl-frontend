@@ -2,6 +2,7 @@ import Image from "next/image";
 import chairman from "@/public/assets/chairman.png";
 import aboutLogo from "@/public/assets/aboutLogo.png";
 import about1 from "@/public/assets/about1.jpg";
+import about3 from "@/public/assets/about3.png";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import CTAAndFooter from "../components/Footer";
@@ -25,26 +26,20 @@ export default function page() {
           {/* chairman message content */}
           <div className="about_us_chairman_section">
             <div>
-              <Image
-                src={chairman}
-                alt="chairman"
-                className="sm:min-w-111.5 sm:h-134.75 rounded-lg mb-5"
-              />
-              <h4 className="text-[#1E552A] text-[32px] font-bold">
-                A Matin Chowdhury
-              </h4>
-              <h6 className="text-[22px] font-bold text-[#2D2D2D]">Chairman</h6>
-              <p className="text-[#2D2D2D] font-medium text-[22px]">
+              <Image src={chairman} alt="chairman" className="chairman_image" />
+              <h4 className="chairman_name">A Matin Chowdhury</h4>
+              <h6 className="chairman_position">Chairman</h6>
+              <p className="chairman_company_name">
                 Sirajganj Economic Zone Ltd
               </p>
             </div>
             <div className="max-w-199">
               {/* Heading */}
-              <h2 className="about_us_heading max-w-[626px] mb-6">
+              <h2 className="about_us_heading max-w-156.5 mb-6">
                 Chairman’s
                 <span className="font-normal"> Welcome Message</span>
               </h2>
-              <p className="text-[#2D2D2D] font-medium">
+              <p className="chairman_message_text">
                 It is a great pleasure for me to welcome and address Investors
                 both National – International to Sirajganj Economic Zone Ltd.,
                 the largest Private Special Economic Zone of Bangladesh. With
@@ -191,38 +186,97 @@ export default function page() {
               {/* Right Stats */}
               <div className="about_us_stats_grid">
                 <div>
-                  <h3 className="about_us_stats_number">
-                    1,041
-                  </h3>
-                  <p className="about_us_stats_number_text">
-                    Acres of Land
-                  </p>
+                  <h3 className="about_us_stats_number">1,041</h3>
+                  <p className="about_us_stats_number_text">Acres of Land</p>
                 </div>
 
                 <div>
-                  <h3 className="about_us_stats_number">
-                    300k+
-                  </h3>
+                  <h3 className="about_us_stats_number">300k+</h3>
                   <p className="about_us_stats_number_text">
                     Skilled Workforce
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="about_us_stats_number">
-                    Prime
-                  </h3>
-                  <p className="about_us_stats_number_text">
-                    Connectivity Hub
-                  </p>
+                  <h3 className="about_us_stats_number">Prime</h3>
+                  <p className="about_us_stats_number_text">Connectivity Hub</p>
                 </div>
 
                 <div>
-                  <h3 className="about_us_stats_number">
-                    $2B+
-                  </h3>
-                  <p className="about_us_stats_number_text">
-                    Total Investment
+                  <h3 className="about_us_stats_number">$2B+</h3>
+                  <p className="about_us_stats_number_text">Total Investment</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* History section */}
+        <section className="history_section">
+          <div className="history_inner_div">
+            {/* TOP IMAGE */}
+            <div className="history_top_img">
+              <Image
+                src={about3}
+                alt="SEZ History"
+                fill
+                className="object-cover"
+              />
+            </div>
+
+            {/* CONTENT */}
+            <div className="history_contacts">
+              {/* TITLE */}
+              <h2 className="history_contact_title">Brief History of SEZ</h2>
+
+              {/* TIMELINE */}
+              <div className="history_timeline">
+                {/* Line */}
+                <div className="absolute left-0 right-0 top-16.5 h-px bg-white/30" />
+
+                {["2016", "2017", "2018", "2019"].map((year) => (
+                  <div
+                    key={year}
+                    className="history_timeline_year"
+                  >
+                    <span className="history_timeline_year_single">
+                      {year}
+                    </span>
+                    <span className="history_timeline_dot" />
+                  </div>
+                ))}
+              </div>
+
+              {/* CARDS */}
+              <div className="history_card_grid">
+                <div className="history_card_div">
+                  <h4 className="history_card_title">Government approval</h4>
+                  <p className="history_card_text">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s
+                  </p>
+                </div>
+                <div className="history_card_div">
+                  <h4 className="history_card_title">
+                    License as Developer and Operator
+                  </h4>
+                  <p className="history_card_text">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry.
+                  </p>
+                </div>
+                <div className="history_card_div">
+                  <h4 className="history_card_title">Land handed over</h4>
+                  <p className="history_card_text">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry.
+                  </p>
+                </div>
+                <div className="history_card_div">
+                  <h4 className="history_card_title">Development starts</h4>
+                  <p className="history_card_text">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry.
                   </p>
                 </div>
               </div>

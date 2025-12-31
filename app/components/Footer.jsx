@@ -15,7 +15,7 @@ export default function CTAAndFooter() {
   return (
     <footer className="w-full">
       {/* CTA SECTION */}
-      <section className="cta_section">
+      <section className="cta_section relative">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
