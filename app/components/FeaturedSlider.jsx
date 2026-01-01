@@ -1,74 +1,59 @@
-"use client";
+'use client'
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+// Swiper styles
+import 'swiper/css';
+import 'swiper/css/scrollbar';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import '@/app/swiperStyles.css';
 
-const slides = [
-  {
-    title: "Continuous GDP Growth",
-    desc:
-      "Sirajganj Economic Zone Limited (SEZL) is at the forefront of industrial development, offering a strategic gateway for businesses to thrive.",
-    image: "/assets/slide1.jpg",
-  },
-  {
-    title: "Industrial Excellence",
-    desc:
-      "World-class infrastructure with sustainable industrial solutions.",
-    image: "/assets/about1.jpg",
-  },
-  {
-    title: "Future Ready Zone",
-    desc:
-      "Designed to support long-term economic transformation.",
-    image: "/assets/bg.jpg",
-  },
-];
+import { Keyboard, Scrollbar, Navigation, Pagination } from 'swiper/modules';
 
-export default function FeaturedSlider() {
+import one from "@/public/assets/casousel/one.webp";
+import three from "@/public/assets/casousel/three.webp";
+
+
+export default function Carousel({ height = '400px' }) {
+  const images = [one, three];
   return (
-    <section className="max-w-7xl mx-auto px-4 py-16">
+    <div className="carousel-container" style={{ height }}>
       <Swiper
-        modules={[Navigation, Pagination]}
+        slidesPerView={1}
+        centeredSlides={false}
+        slidesPerGroupSkip={1}
+        grabCursor
+        keyboard={{ enabled: true }}
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+          },
+          769: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+          },
+        }}
+        scrollbar={{ draggable: true }}
         navigation
         pagination={{ clickable: true }}
-        spaceBetween={30}
-        slidesPerView={1}
-        className="rounded-3xl overflow-hidden"
+        modules={[Keyboard, Scrollbar, Navigation, Pagination]}
+        className="mySwiper"
       >
-        {slides.map((item, index) => (
-          <SwiperSlide key={index}>
-            <div className="relative h-[420px] lg:h-[520px]">
-
-              {/* IMAGE */}
-              <Image
-                src={item.image}
-                alt={item.title}
-                fill
-                className="object-cover"
-              />
-
-              {/* OVERLAY */}
-              <div className="absolute inset-0 bg-black/40" />
-
-              {/* CONTENT */}
-              <div className="absolute bottom-0 left-0 p-8 max-w-xl text-white">
-                <h3 className="text-2xl font-semibold mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-sm leading-relaxed opacity-90">
-                  {item.desc}
-                </p>
-              </div>
-
-            </div>
+        {Array.from({ length: 9 }, (_, i) => (
+          <SwiperSlide key={i}>
+            <img
+              src={images[i % images.length].src}
+              alt={`Slide ${i + 1}`}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
-    </section>
+    </div>
   );
 }
