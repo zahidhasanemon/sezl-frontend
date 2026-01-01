@@ -34,8 +34,8 @@ export default function CTAAndFooter() {
 
           <div className="cta_btn_div">
             <Link href="#">
-              <button className="service_btn bg-white">
-                <div className="see_all_btn_icon_bg bg-[#2ECC71]">
+              <button className="consultation_btn group hover:border hover:border-[#1E552A] lg:mt-16.25 mt-6 pr-5">
+                <div className="consultation_icon_bg">
                   <Image src={arrow_green} alt="Arrow Right" />
                 </div>
                 <span>Schedule Your Free Consultation</span>
@@ -115,36 +115,55 @@ export default function CTAAndFooter() {
               </div>
             </div>
           </div>
-          
         </div>
         {/* BOTTOM */}
-          <div className="text-[10px] lg:flex max-w-7xl mx-auto xl:gap-10 mt-5 px-4">
-            <span className="lg:w-[400px] mx-4 md:mx-0 flex justify-center md:justify-start">
-              © 2024 Sirajganj Economic Zone Ltd. All rights reserved.
-            </span>
-            <div className="border-t-[0.5px] border-white max-w-[937px] flex justify-start md:gap-8 gap-2 w-full mt-2 md:flex-row flex-col pt-2">
-                <div className="footer_bottom_arrow">
-                    <span>About us</span>
-                    <Image src={footer_arrow} alt="footer_arrow" className="h-[11px] w-[11px]"/>
-                </div>
-                <div className="footer_bottom_arrow">
-                    <span>Our services</span>
-                    <Image src={footer_arrow} alt="footer_arrow" className="h-[11px] w-[11px]"/>
-                </div>
-                <div className="footer_bottom_arrow">
-                    <span>Teams</span>
-                    <Image src={footer_arrow} alt="footer_arrow" className="h-[11px] w-[11px]"/>
-                </div>
-                <div className="footer_bottom_arrow">
-                    <span>Awards</span>
-                    <Image src={footer_arrow} alt="footer_arrow" className="h-[11px] w-[11px]"/>
-                </div>
-                <div className="footer_bottom_arrow">
-                    <span>Contact</span>
-                    <Image src={footer_arrow} alt="footer_arrow" className="h-[11px] w-[11px]"/>
-                </div>
-            </div>
+        <div className="text-[10px] lg:flex max-w-7xl mx-auto xl:gap-10 mt-5 px-4">
+          <span className="lg:w-[400px] mx-4 md:mx-0 flex justify-center md:justify-start">
+            © 2024 Sirajganj Economic Zone Ltd. All rights reserved.
+          </span>
+          <div className="border-t-[0.5px] border-white max-w-[937px] flex justify-start md:gap-8 gap-2 w-full mt-2 md:flex-row flex-col pt-2">
+            <button className="footer_bottom_arrow">
+              <span>About us</span>
+              <Image
+                src={footer_arrow}
+                alt="footer_arrow"
+                className="h-[11px] w-[11px]"
+              />
+            </button>
+            <button className="footer_bottom_arrow">
+              <span>Our services</span>
+              <Image
+                src={footer_arrow}
+                alt="footer_arrow"
+                className="h-[11px] w-[11px]"
+              />
+            </button>
+            <button className="footer_bottom_arrow">
+              <span>Teams</span>
+              <Image
+                src={footer_arrow}
+                alt="footer_arrow"
+                className="h-[11px] w-[11px]"
+              />
+            </button>
+            <button className="footer_bottom_arrow">
+              <span>Awards</span>
+              <Image
+                src={footer_arrow}
+                alt="footer_arrow"
+                className="h-[11px] w-[11px]"
+              />
+            </button>
+            <button className="footer_bottom_arrow">
+              <span>Contact</span>
+              <Image
+                src={footer_arrow}
+                alt="footer_arrow"
+                className="h-[11px] w-[11px]"
+              />
+            </button>
           </div>
+        </div>
       </section>
     </footer>
   );

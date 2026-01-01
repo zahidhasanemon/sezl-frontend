@@ -48,13 +48,13 @@ export default function Home() {
               the Heart of Bangladesh
             </h1>
 
-            <p className="text-white pt-6 pb-[28px]">
+            <p className="text-white pt-6 pb-7">
               Discover unparalleled investment opportunities at Sirajganj
               Economic Zone, where strategic location meets world-class
               infrastructure and sustainable development.
             </p>
 
-            <Link href="#" className="arrow_btn max-w-[222px]">
+            <Link href="#" className="arrow_btn max-w-55.5 group">
               <div className="arrow_btn_icon_bg">
                 <Image src={download} alt="Arrow Right" />
               </div>
@@ -98,7 +98,7 @@ export default function Home() {
       <div className="container_main_div md:pt-25 pt-5 md:pb-32 pb-5 px-4 2xl:px-0">
         <div className="service_section_header md:pb-16.25 pb-4">
           <div>
-            <span className="about_us_badge uppercase">Services</span>
+            <div className="about_us_badge uppercase">Services</div>
             <h2 className="service_section_title">
               Our Core <span className="font-light">Services</span>
             </h2>
@@ -110,13 +110,14 @@ export default function Home() {
             </p>
           </div>
           <div className="mt-auto">
-            <Link href="#">
-              <button className="service_btn">
-                <div className="see_all_btn_icon_bg">
-                  <Image src={arrow_green} alt="Arrow Right" />
-                </div>
-                <span>Check All Services</span>
-              </button>
+            <Link
+              href="#"
+              className="arrow_btn group hover:border hover:border-[#1E552A] w-50.5 mt-5 lg:mt-0"
+            >
+              <div className="arrow_btn_icon_bg">
+                <Image src={arrow_green} alt="Arrow Right" />
+              </div>
+              <span>Check All Services</span>
             </Link>
           </div>
         </div>
@@ -392,19 +393,19 @@ export default function Home() {
             </div>
             <div className="mt-auto">
               <Link href="#">
-                <button className="service_btn">
-                  <div className="see_all_btn_icon_bg">
+                <button className="arrow_btn group hover:border hover:border-[#1E552A] lg:mt-16.25 mt-6 w-50">
+                  <div className="arrow_btn_icon_bg">
                     <Image src={arrow_green} alt="Arrow Right" />
                   </div>
-                  <span>Check All Services</span>
+                  <span>Check All Insights</span>
                 </button>
               </Link>
             </div>
           </div>
           {/* card div */}
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+          <div className="news_cards_div">
             {/* card 1 */}
-            <div className="bg-white p-6 rounded-2xl">
+            <div className="news_card_main_div">
               <Image src={news1} alt="News 1" className="news_card_img" />
               <span className="news_card_header">ECONOMY</span>
               <h4 className="news_card_title">
@@ -413,7 +414,7 @@ export default function Home() {
               <p className="news_card_date">Oct 26, 2023</p>
             </div>
             {/* card 2 */}
-            <div className="bg-white p-6 rounded-2xl">
+            <div className="news_card_main_div">
               <Image src={news2} alt="News 2" className="news_card_img" />
               <span className="news_card_header">ECONOMY</span>
               <h4 className="news_card_title">
@@ -422,7 +423,7 @@ export default function Home() {
               <p className="news_card_date">Oct 26, 2023</p>
             </div>
             {/* card 3 */}
-            <div className="bg-white p-6 rounded-2xl">
+            <div className="news_card_main_div">
               <Image src={news3} alt="News 3" className="news_card_img" />
               <span className="news_card_header">ECONOMY</span>
               <h4 className="news_card_title">

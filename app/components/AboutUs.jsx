@@ -6,6 +6,7 @@ import socialIcons1 from "@/public/assets/socialIcons1.png";
 import socialIcons2 from "@/public/assets/socialIcons2.png";
 import socialIcons3 from "@/public/assets/socialIcons3.png";
 import about1 from "@/public/assets/about1.jpg";
+
 export default function AboutUs() {
   return (
     <section className="about_us px-4 2xl:px-0">
@@ -74,11 +75,13 @@ export default function AboutUs() {
             </p>
 
             {/* CTA */}
-            <Link href="#" className="see_all_btn md:mt-16.25 mt-5">
-              <div className="see_all_btn_icon_bg">
+            <Link href="#">
+              <button className="arrow_btn group hover:border hover:border-[#1E552A] lg:mt-16.25 mt-6 w-28.75">
+              <div className="arrow_btn_icon_bg">
                 <Image src={arrow_green} alt="Arrow Right" />
               </div>
               <span>See All</span>
+            </button>
             </Link>
           </div>
           {/* right side content */}
