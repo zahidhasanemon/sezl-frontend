@@ -5,6 +5,7 @@ import about1 from "@/public/assets/about1.jpg";
 import about3 from "@/public/assets/about3.png";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
+import HeroCommon from "../components/HeroCommon";
 import CTAAndFooter from "../components/Footer";
 import bg2 from "@/public/assets/bg2.jpg";
 
@@ -18,15 +19,34 @@ export default function page() {
       {/* main content */}
       <div className="">
         {/* hero secition */}
-        <div className="common_hero_section">
-          <h2 className="common_hero_heading">About Us</h2>
+        <div className="md:mb-29 mb-6">
+          <HeroCommon title="About us" />
         </div>
         {/* rest of the about us page content */}
         <div className="common_page_container">
           {/* chairman message content */}
           <div className="about_us_chairman_section">
             <div>
-              <Image src={chairman} alt="chairman" className="chairman_image" />
+              <div className="hover-3d">
+                {/* content */}
+                <figure className="">
+                  <Image
+                    src={chairman}
+                    alt="chairman"
+                    className="chairman_image"
+                  />
+                </figure>
+                {/* 8 empty divs needed for the 3D effect */}
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+
               <h4 className="chairman_name">A Matin Chowdhury</h4>
               <h6 className="chairman_position">Chairman</h6>
               <p className="chairman_company_name">
@@ -234,13 +254,8 @@ export default function page() {
                 <div className="absolute left-0 right-0 top-16.5 h-px bg-white/30" />
 
                 {["2016", "2017", "2018", "2019"].map((year) => (
-                  <div
-                    key={year}
-                    className="history_timeline_year"
-                  >
-                    <span className="history_timeline_year_single">
-                      {year}
-                    </span>
+                  <div key={year} className="history_timeline_year">
+                    <span className="history_timeline_year_single">{year}</span>
                     <span className="history_timeline_dot" />
                   </div>
                 ))}
@@ -252,8 +267,8 @@ export default function page() {
                   <h4 className="history_card_title">Government approval</h4>
                   <p className="history_card_text">
                     Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s
+                    typesetting industry. Lorem Ipsum has been the
+                    industry&apos;s standard dummy text ever since the 1500s
                   </p>
                 </div>
                 <div className="history_card_div">
