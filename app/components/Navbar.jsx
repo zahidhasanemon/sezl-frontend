@@ -29,13 +29,14 @@ export default function Navbar() {
         className={`navbar_main_div ${isHome ? "text-white" : "text-black"}`}
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2 animate-pulse">
           <Image
             src={logo} // replace with your logo
             alt="SEZL Logo"
             width={44}
             height={44}
             priority
+            // className="animate-in fade-in zoom-in duration-300"
           />
         </Link>
 
@@ -131,8 +132,46 @@ export default function Navbar() {
           </li>
 
           {/* Pages */}
-          <li className="hover:text-gray-500">
-            <Link href="#">Pages</Link>
+          <li className="flex items-center gap-1 hover:text-gray-500">
+            <div className="dropdown dropdown-end">
+              <label
+                tabIndex={0}
+                className="flex items-center gap-1 text-sm cursor-pointer hover:text-gray-500"
+              >
+                Pages
+                <ChevronDown size={14} />
+              </label>
+
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu mt-2 w-36 rounded-box bg-white text-black shadow min-w-[250px]"
+              >
+                <li>
+                  <Link href="about-us" className="hover:bg-gray-100 transition">About Us</Link>
+                </li>
+                <li>
+                  <Link href="about-meet" className="hover:bg-gray-100 transition">Our Development Partners</Link>
+                </li>
+                <li>
+                  <Link href="directors" className="hover:bg-gray-100 transition">Board of Directors</Link>
+                </li>
+                <li>
+                  <Link href="management" className="hover:bg-gray-100 transition">Management Team</Link>
+                </li>
+                <li>
+                  <Link href="why-bd" className="hover:bg-gray-100 transition">Why Invest in Bangladesh</Link>
+                </li>
+                <li>
+                  <Link href="partners" className="hover:bg-gray-100 transition">Our Development Partners</Link>
+                </li>
+                <li>
+                  <Link href="incentives" className="hover:bg-gray-100 transition">Incentives for Investors</Link>
+                </li>
+                <li>
+                  <Link href="why-sezl" className="hover:bg-gray-100 transition">Why Invest in SEZL</Link>
+                </li>
+              </ul>
+            </div>
           </li>
 
           {/* Contact */}
@@ -177,7 +216,11 @@ export default function Navbar() {
           {/* CTA */}
           <Link
             href="#"
-            className={`flex items-center gap-2 border border-white/30 px-2 py-1.5 rounded-full text-sm font-medium ${isHome ? "text-white bg-white/20" : "text-black bg-white"}`}
+            className={`flex items-center gap-2 border border-white/30 px-2 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ${
+              isHome
+                ? "text-white bg-white/20 hover:bg-white/50"
+                : "text-[#111111] bg-white hover:border hover:border-[#1E552A] hover:text-[#1E552A]"
+            }`}
           >
             <div className="bg-white rounded-full p-2 border border-[#1E552A]">
               <Image src={arrow_green} alt="Arrow Right" />
@@ -189,15 +232,17 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setOpen(!open)}
-          className={`lg:hidden focus:outline-none ${isHome ? "text-white" : "text-black"}`}>
+          className={`lg:hidden focus:outline-none ${
+            isHome ? "text-white" : "text-black"
+          }`}
+        >
           {open ? <X size={26} /> : <Menu size={26} />}
         </button>
       </nav>
 
       {/* Mobile Menu */}
       {open && (
-        <div 
-        className="lg:hidden bg-black/80 backdrop-blur-md text-white px-6 py-6">
+        <div className="lg:hidden bg-black/80 backdrop-blur-md text-white px-6 py-6">
           <ul className="flex flex-col gap-4 text-sm">
             {navLinks.map((item) => (
               <li key={item.label}>
