@@ -62,6 +62,47 @@ export default function Home() {
             </Link>
           </div>
           <div className="absolute bottom-0 left-0 right-0 -mt-10 bg-white/10 backdrop-blur rounded-b-[20px] py-6 px-6">
+            <div className="slider w-full overflow-hidden">
+              <div className="flex items-center lg:gap-[122px] gap-10 overflow-x-auto scrollbar-hide lg:overflow-visible lg:justify-center slider-track slider-animation">
+                <div className="slide">
+                  <Image
+                    src={dean}
+                    alt="dean"
+                    className="min-w-[99px] h-[75px] object-contain"
+                  />
+                </div>
+                <div className="slide">
+                  <Image
+                    src={kerala}
+                    alt="kerala"
+                    className="min-w-[99px] h-[75px] object-contain"
+                  />
+                </div>
+                <div className="slide">
+                  <Image
+                    src={nitech}
+                    alt="nitech"
+                    className="min-w-[99px] h-[75px] object-contain"
+                  />
+                </div>
+                <div className="slide">
+                  <Image
+                    src={root}
+                    alt="root"
+                    className="min-w-[99px] h-[75px] object-contain"
+                  />
+                </div>
+                <div className="slide">
+                  <Image
+                    src={pad}
+                    alt="pad"
+                    className="min-w-[99px] h-[75px] object-contain"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* <div className="absolute bottom-0 left-0 right-0 -mt-10 bg-white/10 backdrop-blur rounded-b-[20px] py-6 px-6">
             <div className="flex items-center lg:gap-[122px] gap-10 overflow-x-auto scrollbar-hide lg:overflow-visible lg:justify-center">
               <Image
                 src={dean}
@@ -89,7 +130,7 @@ export default function Home() {
                 className="min-w-[99px] h-[75px] object-contain"
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       {/* about section */}

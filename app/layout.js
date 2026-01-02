@@ -2,6 +2,13 @@ import "./globals.css";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import ScrollProvider from "@/app/components/ScrollProvider";
 
+
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+
+
+config.autoAddCss = false;
+
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
@@ -16,6 +23,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${plusJakartaSans.className} bg-white`}>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          integrity="sha512-..."
+          crossOrigin="anonymous"
+          referrerPolicy="no-referrer"
+        />
+      </head>
       <body className="bg-white">
         <ScrollProvider>{children}</ScrollProvider>
       </body>
