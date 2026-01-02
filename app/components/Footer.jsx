@@ -12,6 +12,15 @@ import footer6 from "@/public/assets/footer6.png";
 import footer_arrow from "@/public/assets/footer_arrow.png";
 
 export default function CTAAndFooter() {
+
+  const fbIcon = 'fa-brands fa-facebook-f';
+  const XIcon = 'fa-brands fa-twitter';
+  const linkedin = 'fa-brands fa-linkedin';
+  const pinterestIcon = 'fa-brands fa-pinterest';
+
+  const telephoneIcon = 'fa-solid fa-phone';
+  const mailIcon = 'fa-solid fa-envelope';
+
   return (
     <footer className="w-full">
       {/* CTA SECTION */}
@@ -88,11 +97,11 @@ export default function CTAAndFooter() {
           <div>
             <h4 className="font-semibold mb-3">Contact Us</h4>
             <p className="footer_contact_items">
-              <Image src={footer1} alt="footer1" />
+                <i className={`${telephoneIcon} text-yellow-300`}></i>
               <span> +880 123 456 7890</span>
             </p>
             <p className="footer_contact_items">
-              <Image src={footer2} alt="footer2" />
+                <i className={`${mailIcon} text-yellow-300`}></i>
               <span> info@sezl.gov.bd</span>
             </p>
           </div>
@@ -102,16 +111,16 @@ export default function CTAAndFooter() {
             <h4 className="font-semibold mb-3">Social Links</h4>
             <div className="flex gap-1.5">
               <div className="footer_social_icons">
-                <Image src={footer3} alt="footer3" />
+                <i className={`${fbIcon} text-yellow-300 text-2xl`}></i>
               </div>
               <div className="footer_social_icons">
-                <Image src={footer4} alt="footer4" />
+                <i className={`${XIcon} text-yellow-300 text-2xl`}></i>
               </div>
               <div className="footer_social_icons">
-                <Image src={footer5} alt="footer5" />
+                <i className={`${linkedin} text-yellow-300 text-2xl`}></i>
               </div>
               <div className="footer_social_icons">
-                <Image src={footer6} alt="footer6" />
+                <i className={`${pinterestIcon} text-yellow-300 text-2xl`}></i>
               </div>
             </div>
           </div>
