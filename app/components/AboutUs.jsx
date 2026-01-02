@@ -8,6 +8,12 @@ import socialIcons3 from "@/public/assets/socialIcons3.png";
 import about1 from "@/public/assets/about1.jpg";
 
 export default function AboutUs() {
+
+   const fbIcon = 'fa-brands fa-facebook-f';
+   const XIcon = 'fa-brands fa-twitter';
+   const instaIcon = 'fa-brands fa-instagram';
+
+  
   return (
     <section className="about_us px-4 2xl:px-0">
       <div className="about_us_main_div">
@@ -101,21 +107,14 @@ export default function AboutUs() {
 
             {/* Social icons (demo) */}
             <div className="social_icons">
-              <Image
+              {/* <Image
                 className="cursor-pointer"
                 src={socialIcons1}
                 alt="Facebook"
-              />
-              <Image
-                className="cursor-pointer"
-                src={socialIcons2}
-                alt="Facebook"
-              />
-              <Image
-                className="cursor-pointer"
-                src={socialIcons3}
-                alt="Facebook"
-              />
+              /> */}
+               <i className={`${fbIcon} text-black text-3xl`}></i>
+               <i className={`${XIcon} text-black text-3xl`}></i>
+               <i className={`${instaIcon} text-black text-3xl`}></i>
             </div>
           </div>
         </div>
