@@ -196,13 +196,13 @@
     @apply bg-white hover:bg-white/90 text-green-700 w-12 h-12 flex items-center justify-center rounded-full m-1 cursor-pointer;
   }
   .footer_contact_items {
-    @apply flex items-center gap-2 mb-3 hover:underline hover:cursor-pointer;
+    @apply flex items-center gap-2 mb-3 hover:cursor-pointer;
   }
   .footer_social_icons {
     @apply rounded-full border border-white/10 h-10 w-10 flex justify-center items-center cursor-pointer hover:bg-white/10 transition;
   }
   .footer_bottom_arrow {
-    @apply flex gap-2 text-[15px] mt-2 items-center justify-center hover:underline hover:cursor-pointer;
+    @apply flex gap-2 text-[15px] mt-2 items-center justify-center hover:cursor-pointer;
   }
 
   /* about us page styles */

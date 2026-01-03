@@ -7,12 +7,6 @@ import { motion, useInView } from "motion/react";
 import arrow_green from "@/public/assets/arrow_green.svg";
 import message from "@/public/assets/message.png";
 import footerlogo from "@/public/assets/footerlogo.png";
-import footer1 from "@/public/assets/footer1.png";
-import footer2 from "@/public/assets/footer2.png";
-import footer3 from "@/public/assets/footer3.png";
-import footer4 from "@/public/assets/footer4.png";
-import footer5 from "@/public/assets/footer5.png";
-import footer6 from "@/public/assets/footer6.png";
 import footer_arrow from "@/public/assets/footer_arrow.png";
 
 export default function CTAAndFooter() {
@@ -162,13 +156,13 @@ export default function CTAAndFooter() {
             transition={{ duration: 0.5, delay: 0.6 }}
           >
             <h4 className="font-semibold mb-3">Contact Us</h4>
-            <p className="footer_contact_items">
+            <p className="footer_contact_items max-w-max">
                 <i className={`${telephoneIcon} text-yellow-300`}></i>
-              <span> +880 123 456 7890</span>
+              <span>+880 123 456 7890</span>
             </p>
-            <p className="footer_contact_items">
+            <p className="footer_contact_items max-w-max">
                 <i className={`${mailIcon} text-yellow-300`}></i>
-              <span> info@sezl.gov.bd</span>
+              <span>info@sezl.gov.bd</span>
             </p>
           </motion.div>
 
@@ -182,28 +176,28 @@ export default function CTAAndFooter() {
             <div className="flex gap-1.5">
               <motion.div
                 className="footer_social_icons"
-                whileHover={{ scale: 1.2, rotate: 5 }}
+                whileHover={{ scale: 1.1, rotate: 3 }}
                 whileTap={{ scale: 0.9 }}
               >
                 <i className={`${fbIcon} text-yellow-300 text-2xl`}></i>
               </motion.div>
               <motion.div
                 className="footer_social_icons"
-                whileHover={{ scale: 1.2, rotate: 5 }}
+                whileHover={{ scale: 1.1, rotate: 3 }}
                 whileTap={{ scale: 0.9 }}
               >
                 <i className={`${XIcon} text-yellow-300 text-2xl`}></i>
               </motion.div>
               <motion.div
                 className="footer_social_icons"
-                whileHover={{ scale: 1.2, rotate: 5 }}
+                whileHover={{ scale: 1.1, rotate: 3 }}
                 whileTap={{ scale: 0.9 }}
               >
                 <i className={`${linkedin} text-yellow-300 text-2xl`}></i>
               </motion.div>
               <motion.div
                 className="footer_social_icons"
-                whileHover={{ scale: 1.2, rotate: 5 }}
+                whileHover={{ scale: 1.1, rotate: 3 }}
                 whileTap={{ scale: 0.9 }}
               >
                 <i className={`${pinterestIcon} text-yellow-300 text-2xl`}></i>
@@ -219,13 +213,12 @@ export default function CTAAndFooter() {
           transition={{ duration: 0.5, delay: 0.8 }}
         >
           <span className="lg:w-[400px] mx-4 md:mx-0 flex justify-center md:justify-start">
-            © 2024 Sirajganj Economic Zone Ltd. All rights reserved.
+            © {new Date().getFullYear()} Sirajganj Economic Zone Ltd. All rights reserved.
           </span>
           <div className="border-t-[0.5px] border-white max-w-[937px] flex justify-start md:gap-8 gap-2 w-full mt-2 md:flex-row flex-col pt-2">
-            <motion.button
+            <Link
               className="footer_bottom_arrow"
-              whileHover={{ x: 5 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              href="about-us"
             >
               <span>About us</span>
               <Image
@@ -233,11 +226,10 @@ export default function CTAAndFooter() {
                 alt="footer_arrow"
                 className="h-[11px] w-[11px]"
               />
-            </motion.button>
-            <motion.button
+            </Link>
+            <Link
               className="footer_bottom_arrow"
-              whileHover={{ x: 5 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              href="#"
             >
               <span>Our services</span>
               <Image
@@ -245,11 +237,10 @@ export default function CTAAndFooter() {
                 alt="footer_arrow"
                 className="h-[11px] w-[11px]"
               />
-            </motion.button>
-            <motion.button
+            </Link>
+            <Link
               className="footer_bottom_arrow"
-              whileHover={{ x: 5 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              href="#"
             >
               <span>Teams</span>
               <Image
@@ -257,11 +248,10 @@ export default function CTAAndFooter() {
                 alt="footer_arrow"
                 className="h-[11px] w-[11px]"
               />
-            </motion.button>
-            <motion.button
+            </Link>
+            <Link
               className="footer_bottom_arrow"
-              whileHover={{ x: 5 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              href="#"
             >
               <span>Awards</span>
               <Image
@@ -269,11 +259,10 @@ export default function CTAAndFooter() {
                 alt="footer_arrow"
                 className="h-[11px] w-[11px]"
               />
-            </motion.button>
-            <motion.button
+            </Link>
+            <Link
               className="footer_bottom_arrow"
-              whileHover={{ x: 5 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              href="#"
             >
               <span>Contact</span>
               <Image
@@ -281,7 +270,7 @@ export default function CTAAndFooter() {
                 alt="footer_arrow"
                 className="h-[11px] w-[11px]"
               />
-            </motion.button>
+            </Link>
           </div>
         </motion.div>
       </motion.section>

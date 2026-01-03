@@ -16,7 +16,7 @@ const testimonials = [
     {
         name: "Daniel K.",
         role: "Senior Executive",
-        text: `Before working with this team, I felt lost. Now I feel confident in my financial roadmap and I’m finally saving consistently. I didn’t know where to start with my finances. They made everything simple and actionable.`,
+        text: `Before working with this team, I felt lost. Now I feel confident in my financial roadmap and I’m finally saving consistently. I didn’t know where to start with my finances.`,
         image: "/assets/testimonial1.jpg",
     },
     {
@@ -42,7 +42,7 @@ const testimonials = [
 export default function Testimonials() {
     const testimonialRef = useRef(null);
     const testimonialInView = useInView(testimonialRef, { once: true });
-    
+
     return (
         <section ref={testimonialRef} className="max-w-7xl mx-auto px-4 md:py-20 py-6">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-1 items-center">
@@ -74,7 +74,7 @@ export default function Testimonials() {
                         animate={testimonialInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
                     >
-                        <Image src={comma} alt="comma"/>
+                        <Image src={comma} alt="comma" />
                     </motion.div>
                 </motion.div>
 
@@ -93,25 +93,32 @@ export default function Testimonials() {
                         }}
                         spaceBetween={40}
                         slidesPerView={1}
+                        loop={true}
                     >
                         {testimonials.map((item, index) => (
                             <SwiperSlide key={index}>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
 
                                     {/* IMAGE */}
                                     <motion.div
-                                        className="relative w-64 h-80 mx-auto"
+                                        className="relative w-52 h-72 mx-auto"
                                         initial={{ opacity: 0, scale: 0.8 }}
                                         animate={testimonialInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                                         transition={{ duration: 0.6, delay: 0.3 }}
                                     >
-                                        <div className="absolute inset-0 translate-x-2 translate-y-2 bg-gray-200 rounded-2xl" />
-                                        <Image
-                                            src={testimonial1}
-                                            alt={item.name}
-                                            fill
-                                            className="object-cover rounded-2xl relative z-10"
-                                        />
+                                        {/* Multiple layered shadows */}
+                                        <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 -translate-x-6 bg-gray-300/40 rounded-2xl -rotate-3 h-3/4" />
+                                        <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 -translate-x-3 bg-gray-300/60 rounded-2xl -rotate-2 h-3/4" />
+
+                                        {/* Main image with white border */}
+                                        <div className="relative w-full h-full rounded-2xl overflow-hidden z-10 border-4 border-white shadow-xl">
+                                            <Image
+                                                src={testimonial1}
+                                                alt={item.name}
+                                                fill
+                                                className="object-cover"
+                                            />
+                                        </div>
                                     </motion.div>
 
                                     {/* TEXT */}
@@ -120,7 +127,7 @@ export default function Testimonials() {
                                         animate={testimonialInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                                         transition={{ duration: 0.6, delay: 0.4 }}
                                     >
-                                        <p className="text-[#2D2D2D] leading-relaxed mb-6 text-xl">
+                                        <p className="text-[#2D2D2D] leading-relaxed mb-6 text-xl italic">
                                             {item.text}
                                         </p>
 
@@ -130,35 +137,33 @@ export default function Testimonials() {
                                         <p className="text-[#2D2D2D]">
                                             {item.role}
                                         </p>
-                                        {/* NAVIGATION */}
-                                        <motion.div
-                                            className="flex gap-6 mt-8 justify-start"
-                                            initial={{ opacity: 0 }}
-                                            animate={testimonialInView ? { opacity: 1 } : { opacity: 0 }}
-                                            transition={{ duration: 0.6, delay: 0.5 }}
-                                        >
-                                            <motion.button
-                                                className="swiper-prev text-green-700 text-2xl"
-                                                whileHover={{ scale: 1.2 }}
-                                                whileTap={{ scale: 0.9 }}
-                                            >
-                                                ←
-                                            </motion.button>
-                                            <motion.button
-                                                className="swiper-next text-green-700 text-2xl"
-                                                whileHover={{ scale: 1.2 }}
-                                                whileTap={{ scale: 0.9 }}
-                                            >
-                                                →
-                                            </motion.button>
-                                        </motion.div>
                                     </motion.div>
                                 </div>
                             </SwiperSlide>
                         ))}
+
+                        {/* NAVIGATION - Outside SwiperSlide to prevent sliding */}
+                        <motion.div
+                            className="flex right-4 md:right-80 bottom-0 z-20 absolute gap-6 justify-center"
+                            initial={{ opacity: 0 }}
+                            animate={testimonialInView ? { opacity: 1 } : { opacity: 0 }}
+                            transition={{ duration: 0.6, delay: 0.5 }}
+                        >
+                            <motion.button
+                                className="swiper-prev text-[#1C4B4280] hover:text-[#1C4B42] text-2xl cursor-pointer"
+                            >
+                                ←
+                            </motion.button>
+                            <motion.button
+                                className="swiper-next text-[#1C4B4280] hover:text-green-700 text-2xl cursor-pointer"
+                            >
+                                →
+                            </motion.button>
+                        </motion.div>
                     </Swiper>
                 </motion.div>
             </div>
         </section>
     );
 }
+
