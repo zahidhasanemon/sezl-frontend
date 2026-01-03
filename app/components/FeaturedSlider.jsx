@@ -1,6 +1,6 @@
 'use client'
-import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { useState, useRef } from "react";
+import { motion, AnimatePresence, useInView } from "motion/react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import one from "@/public/assets/casousel/one.webp";
 import three from "@/public/assets/casousel/three.webp";
@@ -15,6 +15,8 @@ const initialImages = [
 export default function CustomCarousel() {
   const [images, setImages] = useState(initialImages);
   const [direction, setDirection] = useState(0);
+  const sliderRef = useRef(null);
+  const sliderInView = useInView(sliderRef, { once: true });
 
   const prevSlide = () => {
     setDirection(-1);
@@ -116,9 +118,20 @@ export default function CustomCarousel() {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto mt-10 mb-10">
+    <motion.div
+      ref={sliderRef}
+      className="w-full max-w-6xl mx-auto mt-10 mb-10"
+      initial={{ opacity: 0, y: 50 }}
+      animate={sliderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.8 }}
+    >
       {/* Carousel Container */}
-      <div className="flex h-96 gap-2 justify-center">
+      <motion.div
+        className="flex h-96 gap-2 justify-center"
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={sliderInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
         {/* Main image */}
         <motion.div
           className="flex-shrink-0 w-4/5 relative rounded-lg overflow-hidden shadow-lg"
@@ -200,10 +213,15 @@ export default function CustomCarousel() {
             </motion.div>
           )}
         </div>
-      </div>
+      </motion.div>
 
       {/* Arrows at bottom */}
-      <div className="flex justify-center gap-4 mt-4">
+      <motion.div
+        className="flex justify-center gap-4 mt-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={sliderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
         <motion.button
           onClick={prevSlide}
           className="p-2 rounded-full bg-gray-800 text-white hover:bg-gray-700"
@@ -222,7 +240,7 @@ export default function CustomCarousel() {
         >
           <ArrowRight size={20} />
         </motion.button>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

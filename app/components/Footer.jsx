@@ -1,5 +1,9 @@
+"use client"
+
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
+import { motion, useInView } from "motion/react";
 import arrow_green from "@/public/assets/arrow_green.svg";
 import message from "@/public/assets/message.png";
 import footerlogo from "@/public/assets/footerlogo.png";
@@ -12,6 +16,8 @@ import footer6 from "@/public/assets/footer6.png";
 import footer_arrow from "@/public/assets/footer_arrow.png";
 
 export default function CTAAndFooter() {
+  const footerRef = useRef(null);
+  const footerInView = useInView(footerRef, { once: true });
 
   const fbIcon = 'fa-brands fa-facebook-f';
   const XIcon = 'fa-brands fa-twitter';
@@ -22,9 +28,14 @@ export default function CTAAndFooter() {
   const mailIcon = 'fa-solid fa-envelope';
 
   return (
-    <footer className="w-full">
+    <footer ref={footerRef} className="w-full">
       {/* CTA SECTION */}
-      <section className="cta_section relative">
+      <motion.section
+        className="cta_section relative"
+        initial={{ opacity: 0, y: 50 }}
+        animate={footerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.8 }}
+      >
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -38,63 +49,118 @@ export default function CTAAndFooter() {
 
         {/* Content */}
         <div className="cta_contents">
-          <h2 className="cta_heading">Ready to Explore Your Next Big</h2>
-          <p className="cta_heading2">Opportunity?</p>
+          <motion.h2
+            className="cta_heading"
+            initial={{ opacity: 0, y: 20 }}
+            animate={footerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            Ready to Explore Your Next Big
+          </motion.h2>
+          <motion.p
+            className="cta_heading2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={footerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Opportunity?
+          </motion.p>
 
-          <div className="cta_btn_div">
+          <motion.div
+            className="cta_btn_div"
+            initial={{ opacity: 0, y: 20 }}
+            animate={footerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
             <Link href="#">
-              <button className="consultation_btn group hover:border hover:border-[#1E552A] lg:mt-16.25 mt-6 pr-5">
+              <motion.button
+                className="consultation_btn group hover:border hover:border-[#1E552A] lg:mt-16.25 mt-6 pr-5"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 <div className="consultation_icon_bg">
                   <Image src={arrow_green} alt="Arrow Right" />
                 </div>
                 <span>Schedule Your Free Consultation</span>
-              </button>
+              </motion.button>
             </Link>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* NEWSLETTER BAR */}
-      <section className="newsletter_bar">
+      <motion.section
+        className="newsletter_bar"
+        initial={{ opacity: 0, y: 30 }}
+        animate={footerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
         <div className="newsletter_contents">
           <p className="newslegger_text">Subscribe to our newsletter!</p>
 
-          <div className="newsletter_input_div">
+          <motion.div
+            className="newsletter_input_div"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={footerInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
             <input
               type="email"
               placeholder="Type your email address"
               className="newsletter_input"
             />
-            <button className="newsletter_btn">
+            <motion.button
+              className="newsletter_btn"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
               <Image src={message} alt="message" />
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* FOOTER */}
-      <section className="bg-[#044512] text-white pt-14 pb-6">
+      <motion.section
+        className="bg-[#044512] text-white pt-14 pb-6"
+        initial={{ opacity: 0, y: 50 }}
+        animate={footerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+      >
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* LOGO */}
-          <div className="md:block flex items-center justify-center">
+          <motion.div
+            className="md:block flex items-center justify-center"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={footerInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
             <Image
               src={footerlogo} // change later
               alt="SEZL Logo"
             />
-          </div>
+          </motion.div>
 
           {/* ADDRESS */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={footerInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+          >
             <h4 className="font-semibold mb-3">Our Address</h4>
             <p>
               123 Investment Lane, Sirajganj,
               <br />
               Bangladesh
             </p>
-          </div>
+          </motion.div>
 
           {/* CONTACT */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={footerInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
             <h4 className="font-semibold mb-3">Contact Us</h4>
             <p className="footer_contact_items">
                 <i className={`${telephoneIcon} text-yellow-300`}></i>
@@ -104,76 +170,121 @@ export default function CTAAndFooter() {
                 <i className={`${mailIcon} text-yellow-300`}></i>
               <span> info@sezl.gov.bd</span>
             </p>
-          </div>
+          </motion.div>
 
           {/* SOCIAL */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={footerInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+          >
             <h4 className="font-semibold mb-3">Social Links</h4>
             <div className="flex gap-1.5">
-              <div className="footer_social_icons">
+              <motion.div
+                className="footer_social_icons"
+                whileHover={{ scale: 1.2, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
+              >
                 <i className={`${fbIcon} text-yellow-300 text-2xl`}></i>
-              </div>
-              <div className="footer_social_icons">
+              </motion.div>
+              <motion.div
+                className="footer_social_icons"
+                whileHover={{ scale: 1.2, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
+              >
                 <i className={`${XIcon} text-yellow-300 text-2xl`}></i>
-              </div>
-              <div className="footer_social_icons">
+              </motion.div>
+              <motion.div
+                className="footer_social_icons"
+                whileHover={{ scale: 1.2, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
+              >
                 <i className={`${linkedin} text-yellow-300 text-2xl`}></i>
-              </div>
-              <div className="footer_social_icons">
+              </motion.div>
+              <motion.div
+                className="footer_social_icons"
+                whileHover={{ scale: 1.2, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
+              >
                 <i className={`${pinterestIcon} text-yellow-300 text-2xl`}></i>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
         {/* BOTTOM */}
-        <div className="text-[10px] lg:flex max-w-7xl mx-auto xl:gap-10 mt-5 px-4">
+        <motion.div
+          className="text-[10px] lg:flex max-w-7xl mx-auto xl:gap-10 mt-5 px-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={footerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+        >
           <span className="lg:w-[400px] mx-4 md:mx-0 flex justify-center md:justify-start">
             © 2024 Sirajganj Economic Zone Ltd. All rights reserved.
           </span>
           <div className="border-t-[0.5px] border-white max-w-[937px] flex justify-start md:gap-8 gap-2 w-full mt-2 md:flex-row flex-col pt-2">
-            <button className="footer_bottom_arrow">
+            <motion.button
+              className="footer_bottom_arrow"
+              whileHover={{ x: 5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
               <span>About us</span>
               <Image
                 src={footer_arrow}
                 alt="footer_arrow"
                 className="h-[11px] w-[11px]"
               />
-            </button>
-            <button className="footer_bottom_arrow">
+            </motion.button>
+            <motion.button
+              className="footer_bottom_arrow"
+              whileHover={{ x: 5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
               <span>Our services</span>
               <Image
                 src={footer_arrow}
                 alt="footer_arrow"
                 className="h-[11px] w-[11px]"
               />
-            </button>
-            <button className="footer_bottom_arrow">
+            </motion.button>
+            <motion.button
+              className="footer_bottom_arrow"
+              whileHover={{ x: 5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
               <span>Teams</span>
               <Image
                 src={footer_arrow}
                 alt="footer_arrow"
                 className="h-[11px] w-[11px]"
               />
-            </button>
-            <button className="footer_bottom_arrow">
+            </motion.button>
+            <motion.button
+              className="footer_bottom_arrow"
+              whileHover={{ x: 5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
               <span>Awards</span>
               <Image
                 src={footer_arrow}
                 alt="footer_arrow"
                 className="h-[11px] w-[11px]"
               />
-            </button>
-            <button className="footer_bottom_arrow">
+            </motion.button>
+            <motion.button
+              className="footer_bottom_arrow"
+              whileHover={{ x: 5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
               <span>Contact</span>
               <Image
                 src={footer_arrow}
                 alt="footer_arrow"
                 className="h-[11px] w-[11px]"
               />
-            </button>
+            </motion.button>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
     </footer>
   );
 }

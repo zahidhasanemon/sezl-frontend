@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { useRef } from "react";
+import { motion, useInView } from "motion/react";
 import testimonial1 from "@/public/assets/testimonial1.jpg";
 import comma from "@/public/assets/comma.png";
 import { EffectCards } from 'swiper/modules';
@@ -38,23 +40,51 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+    const testimonialRef = useRef(null);
+    const testimonialInView = useInView(testimonialRef, { once: true });
+    
     return (
-        <section className="max-w-7xl mx-auto px-4 md:py-20 py-6">
+        <section ref={testimonialRef} className="max-w-7xl mx-auto px-4 md:py-20 py-6">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-1 items-center">
 
                 {/* LEFT */}
-                <div>
-                    <span className="about_us_badge">
+                <motion.div
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={testimonialInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+                    transition={{ duration: 0.8 }}
+                >
+                    <motion.span
+                        className="about_us_badge"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={testimonialInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                    >
                         TESTIMONIALS
-                    </span>
-                    <h2 className="service_section_title">
+                    </motion.span>
+                    <motion.h2
+                        className="service_section_title"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={testimonialInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                    >
                         Life-Changing Journeys, <span className="font-light">Told by Our Clients</span>
-                    </h2>
-                    <Image src={comma} alt="comma"/>
-                </div>
+                    </motion.h2>
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={testimonialInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                    >
+                        <Image src={comma} alt="comma"/>
+                    </motion.div>
+                </motion.div>
 
                 {/* CENTER + RIGHT */}
-                <div className="lg:col-span-2">
+                <motion.div
+                    className="lg:col-span-2"
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={testimonialInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                >
                     <Swiper
                         modules={[Navigation, EffectCards]}
                         navigation={{
@@ -69,7 +99,12 @@ export default function Testimonials() {
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 
                                     {/* IMAGE */}
-                                    <div className="relative w-64 h-80 mx-auto">
+                                    <motion.div
+                                        className="relative w-64 h-80 mx-auto"
+                                        initial={{ opacity: 0, scale: 0.8 }}
+                                        animate={testimonialInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                                        transition={{ duration: 0.6, delay: 0.3 }}
+                                    >
                                         <div className="absolute inset-0 translate-x-2 translate-y-2 bg-gray-200 rounded-2xl" />
                                         <Image
                                             src={testimonial1}
@@ -77,10 +112,14 @@ export default function Testimonials() {
                                             fill
                                             className="object-cover rounded-2xl relative z-10"
                                         />
-                                    </div>
+                                    </motion.div>
 
                                     {/* TEXT */}
-                                    <div>
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 30 }}
+                                        animate={testimonialInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                                        transition={{ duration: 0.6, delay: 0.4 }}
+                                    >
                                         <p className="text-[#2D2D2D] leading-relaxed mb-6 text-xl">
                                             {item.text}
                                         </p>
@@ -92,22 +131,33 @@ export default function Testimonials() {
                                             {item.role}
                                         </p>
                                         {/* NAVIGATION */}
-                                        <div className="flex gap-6 mt-8 justify-start ">
-                                            <button className="swiper-prev text-green-700 text-2xl">
+                                        <motion.div
+                                            className="flex gap-6 mt-8 justify-start"
+                                            initial={{ opacity: 0 }}
+                                            animate={testimonialInView ? { opacity: 1 } : { opacity: 0 }}
+                                            transition={{ duration: 0.6, delay: 0.5 }}
+                                        >
+                                            <motion.button
+                                                className="swiper-prev text-green-700 text-2xl"
+                                                whileHover={{ scale: 1.2 }}
+                                                whileTap={{ scale: 0.9 }}
+                                            >
                                                 ←
-                                            </button>
-                                            <button className="swiper-next text-green-700 text-2xl">
+                                            </motion.button>
+                                            <motion.button
+                                                className="swiper-next text-green-700 text-2xl"
+                                                whileHover={{ scale: 1.2 }}
+                                                whileTap={{ scale: 0.9 }}
+                                            >
                                                 →
-                                            </button>
-                                        </div>
-                                    </div>
+                                            </motion.button>
+                                        </motion.div>
+                                    </motion.div>
                                 </div>
                             </SwiperSlide>
                         ))}
                     </Swiper>
-
-
-                </div>
+                </motion.div>
             </div>
         </section>
     );

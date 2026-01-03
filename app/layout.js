@@ -15,6 +15,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 import "./globals.css";
+import "./custom.css";
 
 export const metadata = {
   title: "SEZL - Sirajganj Economic Zone Limited",
