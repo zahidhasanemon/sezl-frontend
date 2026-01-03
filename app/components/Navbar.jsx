@@ -29,45 +29,21 @@ export default function Navbar() {
         className={`navbar_main_div ${isHome ? "text-white" : "text-black"}`}
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 animate-pulse">
+        <Link href="/" className="flex items-center gap-2">
           <Image
-            src={logo} // replace with your logo
+            src={logo}
             alt="SEZL Logo"
             width={44}
             height={44}
             priority
-            // className="animate-in fade-in zoom-in duration-300"
           />
         </Link>
 
         {/* Desktop Menu */}
         <ul className="hidden lg:flex items-center gap-6 text-sm font-medium">
           {/* About Us */}
-          <li className="flex items-center gap-1 hover:text-gray-500">
-            <div className="dropdown dropdown-end">
-              <label
-                tabIndex={0}
-                className="flex items-center gap-1 text-sm cursor-pointer hover:text-gray-500"
-              >
-                About Us
-                <ChevronDown size={14} />
-              </label>
-
-              <ul
-                tabIndex={0}
-                className="dropdown-content menu mt-2 w-36 rounded-box bg-white text-black shadow"
-              >
-                <li>
-                  <a className="hover:bg-gray-100 transition">Option 1</a>
-                </li>
-                <li>
-                  <a className="hover:bg-gray-100 transition">Option 2</a>
-                </li>
-                <li>
-                  <a className="hover:bg-gray-100 transition">Option 3</a>
-                </li>
-              </ul>
-            </div>
+          <li className="hover:text-gray-500">
+            <Link href="about-us">About Us</Link>
           </li>
 
           {/* Why Us */}
@@ -147,9 +123,6 @@ export default function Navbar() {
                 className="dropdown-content menu mt-2 w-36 rounded-box bg-white text-black shadow min-w-[250px]"
               >
                 <li>
-                  <Link href="about-us" className="hover:bg-gray-100 transition">About Us</Link>
-                </li>
-                <li>
                   <Link href="about-meet" className="hover:bg-gray-100 transition">Our Development Partners</Link>
                 </li>
                 <li>
@@ -216,11 +189,10 @@ export default function Navbar() {
           {/* CTA */}
           <Link
             href="#"
-            className={`flex items-center gap-2 border border-white/30 px-2 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ${
-              isHome
+            className={`flex items-center gap-2 border border-white/30 px-2 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ${isHome
                 ? "text-white bg-white/20 hover:bg-white/50"
                 : "text-[#111111] bg-white hover:border hover:border-[#1E552A] hover:text-[#1E552A]"
-            }`}
+              }`}
           >
             <div className="bg-white rounded-full p-2 border border-[#1E552A]">
               <Image src={arrow_green} alt="Arrow Right" />
@@ -232,9 +204,8 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setOpen(!open)}
-          className={`lg:hidden focus:outline-none ${
-            isHome ? "text-white" : "text-black"
-          }`}
+          className={`lg:hidden focus:outline-none ${isHome ? "text-white" : "text-black"
+            }`}
         >
           {open ? <X size={26} /> : <Menu size={26} />}
         </button>
