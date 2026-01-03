@@ -31,7 +31,7 @@ export default function Hero() {
         <Navbar />
 
         <motion.div
-          className="relative xl:pt-[231px] pt-[150px] xl:pl-[295px] pl-10 max-w-[914px]"
+          className="relative xl:pt-[231px] pt-[150px] xl:pl-[295px] px-5 max-w-[914px]"
           initial={{ opacity: 0, y: 30 }}
           animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -73,43 +73,85 @@ export default function Hero() {
 
         <div className="absolute bottom-0 left-0 right-0 -mt-10 bg-white/10 backdrop-blur rounded-b-[20px] py-6 px-6">
           <div className="w-full overflow-hidden">
-            <div className="flex items-center lg:gap-[122px] gap-10 overflow-x-auto scrollbar-hide lg:overflow-visible lg:justify-center slider-track slider-animation">
-              <div className="slide">
-                <Image
-                  src={dean}
-                  alt="dean"
-                  className="min-w-[99px] h-[75px] object-contain"
-                />
-              </div>
-              <div className="slide">
-                <Image
-                  src={kerala}
-                  alt="kerala"
-                  className="min-w-[99px] h-[75px] object-contain"
-                />
-              </div>
-              <div className="slide">
-                <Image
-                  src={nitech}
-                  alt="nitech"
-                  className="min-w-[99px] h-[75px] object-contain"
-                />
-              </div>
-              <div className="slide">
-                <Image
-                  src={root}
-                  alt="root"
-                  className="min-w-[99px] h-[75px] object-contain"
-                />
-              </div>
-              <div className="slide">
-                <Image
-                  src={pad}
-                  alt="pad"
-                  className="min-w-[99px] h-[75px] object-contain"
-                />
-              </div>
-            </div>
+            <motion.div
+              className="flex items-center lg:gap-[122px] gap-10 lg:overflow-visible lg:justify-center"
+              animate={{
+                x: [0, -1000]
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 20,
+                  ease: "linear"
+                }
+              }}
+            >
+              {[...Array(4)].map((_, setIndex) => (
+                <div key={`set-${setIndex}`} className="flex items-center lg:gap-[122px] gap-10">
+                  <motion.div
+                    className="slide"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                  >
+                    <Image
+                      src={dean}
+                      alt="dean"
+                      className="min-w-[99px] h-[75px] object-contain"
+                    />
+                  </motion.div>
+                  <motion.div
+                    className="slide"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+                  >
+                    <Image
+                      src={kerala}
+                      alt="kerala"
+                      className="min-w-[99px] h-[75px] object-contain"
+                    />
+                  </motion.div>
+                  <motion.div
+                    className="slide"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+                  >
+                    <Image
+                      src={nitech}
+                      alt="nitech"
+                      className="min-w-[99px] h-[75px] object-contain"
+                    />
+                  </motion.div>
+                  <motion.div
+                    className="slide"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                  >
+                    <Image
+                      src={root}
+                      alt="root"
+                      className="min-w-[99px] h-[75px] object-contain"
+                    />
+                  </motion.div>
+                  <motion.div
+                    className="slide"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+                  >
+                    <Image
+                      src={pad}
+                      alt="pad"
+                      className="min-w-[99px] h-[75px] object-contain"
+                    />
+                  </motion.div>
+                </div>
+              ))}
+            </motion.div>
           </div>
         </div>
       </motion.div>

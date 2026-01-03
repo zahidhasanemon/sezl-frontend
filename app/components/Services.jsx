@@ -52,7 +52,7 @@ export default function Services() {
         </motion.div>
       </div>
 
-      <div className="relative bg-white overflow-hidden mt-6 lg:mt-0">
+      <div className="relative bg-white mt-6 lg:mt-0">
         {/* Watermark text */}
         <h2 className="absolute inset-0 flex items-center justify-center text-[110px] font-bold text-green-800/5 select-none">
           SEZ Core Services
